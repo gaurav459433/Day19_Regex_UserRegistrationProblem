@@ -9,9 +9,10 @@ public class Logic {
     private static String firstName;
     private static String lastName;
     private static String email;
+    private static String mobNumber;
 
+    // Method For First Name Validation
     public void isValidFirstName() {
-        // For First Name
         System.out.println("Enter First Name: ");
         firstName = sc.next();
         String regex = "^[A-Z]{1}[a-z]{2,}$";
@@ -27,7 +28,6 @@ public class Logic {
 
     // Method For Last Name Validation
     public void isValidLastName() {
-        // For Last Name
         System.out.println("Enter Last name: ");
         String lastName = sc.next();
         String regex = "^[A-Z]{1}[a-z]{2,}$";
@@ -43,7 +43,6 @@ public class Logic {
 
     // Method For Email Validation
     public void isValidEmail() {
-        // For Email
         System.out.println("Enter EmailId: ");
         String email = sc.next();
         String regex = "^[a-zA-Z0-9][a-zA-Z-0-9+]*([.][a-zA-Z0-9]+)?[@][a-zA-Z-0-9]+[.][a-z]{2,4}([.][a-zA-Z]{2,4})?$";
@@ -54,5 +53,19 @@ public class Logic {
         } else {
             System.out.println("Entered EmailId is Invalid: ");
         }
+        System.out.println();
+    }
+
+    // Method For Mobile Validation
+    public void isValidMobileNumber() {
+        System.out.println("Enter Mobile Number Number: ");
+        String mobNumber = sc.nextLine();
+        String regex = "^(91)[ ][0-9]{10}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(mobNumber);
+        if (matcher.matches())
+            System.out.println("It is a Valid Mobile Number: ");
+        else
+            System.out.println("Entered Mobile Number is Invalid: ");
     }
 }

@@ -7,5 +7,6 @@ public class UserRegistrationProblem {
         logic.isValidFirstName();
         logic.isValidLastName();
         logic.isValidEmail();
+        logic.isValidMobileNumber();
     }
 }
