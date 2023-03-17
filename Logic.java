@@ -6,15 +6,11 @@ import java.util.regex.Pattern;
 
 public class Logic {
     Scanner sc = new Scanner(System.in);
-    private static String firstName;
-    private static String lastName;
-    private static String email;
-    private static String mobNumber;
 
     // Method For First Name Validation
     public void isValidFirstName() {
         System.out.println("Enter First Name: ");
-        firstName = sc.next();
+        String firstName = sc.next();
         String regex = "^[A-Z]{1}[a-z]{2,}$";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(firstName);
@@ -67,5 +63,18 @@ public class Logic {
             System.out.println("It is a Valid Mobile Number: ");
         else
             System.out.println("Entered Mobile Number is Invalid: ");
+    }
+
+    // Method For Password Validation
+    public void isValidPassword() {
+        System.out.println("Enter Password: ");
+        String password = sc.next();
+        String regex = "^[a-zA-Z0-9]{8,}$";
+        Pattern pattern = Pattern.compile(regex);
+        Matcher matcher = pattern.matcher(password);
+        if (matcher.matches())
+            System.out.println("It is a Valid Password: ");
+        else
+            System.out.println("Entered Password is Invalid: ");
     }
 }
