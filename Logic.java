@@ -69,7 +69,7 @@ public class Logic {
     public void isValidPassword() {
         System.out.println("Enter Password: ");
         String password = sc.next();
-        String regex = "^[a-zA-Z0-9]{8,}$";
+        String regex = "((?=.*[A-Z]).{8,})*";
         Pattern pattern = Pattern.compile(regex);
         Matcher matcher = pattern.matcher(password);
         if (matcher.matches())
